@@ -15,10 +15,13 @@
     </form>
 
     <?php
-    $name = NULL;
     
-    $name = $_POST['name'];
-    echo 'Hello '.$name.'<br>';
+    if (empty($_POST['name'])) {
+        $name = '';
+    } else {    
+        $name = $_POST['name'];
+        echo 'Hello '.$name.'<br>';
+    }
     ?>
     </body>
 </html>

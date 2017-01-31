@@ -2,11 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Get Browser</title>
+    <title>Show root</title>
 </head>
 <body>
-    <?php
-        echo $_SERVER['HTTP_USER_AGENT'].'<br>';
-    ?>
+
+<?php
+
+$rd = getenv('DOCUMENT_ROOT');
+echo $rd.'<br>';
+?>
+    
 </body>
 </html>

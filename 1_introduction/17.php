@@ -2,11 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Get Browser</title>
+    <title>Document</title>
 </head>
 <body>
-    <?php
-        echo $_SERVER['HTTP_USER_AGENT'].'<br>';
-    ?>
+
+<?php
+
+echo 'The PHP version used is '.phpversion();
+
+?>
 </body>
 </html>

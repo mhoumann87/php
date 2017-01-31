@@ -2,11 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Get Browser</title>
+    <title>Print error</title>
 </head>
 <body>
-    <?php
-        echo $_SERVER['HTTP_USER_AGENT'].'<br>';
-    ?>
+
+<?php
+echo $x;
+  print_r(error_get_last())."\n";
+?>
+    
 </body>
 </html>
