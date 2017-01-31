@@ -1,0 +1,28 @@
+Thumbs.db
+npm-debug.log
+/bower_components
+/node_modules
+/vendor
+
+ehthumbs.db
+ehthumbs_vista.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+.jpg
+.pgg
+.svg
+.gif
