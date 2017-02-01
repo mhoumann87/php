@@ -1,3 +1,3 @@
 #This is for education only
 
-this peposetory are for my classes in PHP.
+this repository are for my classes in PHP.
