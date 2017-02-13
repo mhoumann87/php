@@ -8,26 +8,23 @@
 <?php
 	date_default_timezone_set('America/Los_Angeles');
 
-	echo '
-		<form method="POST">
-		<label>Enter a Month</label>
-		<input type="number" name="month">
-		<input type="submit" value="Enter Month">
-		</form>
-	';
+$month = $_POST['month'];
 
-	if (empty($_POST['month'])) {
+if (empty($_POST['year'])) {
+	$year = 2017;
+} else {
+	$year = $_POST['year'];
+}
 
-		$month = null;
-	} else {
-		$month = $_POST['month'];
-	}
+$days = cal_days_in_month(CAL_GREGORIAN, $month, $year);
 
-$days = cal_days_in_month(CAL_GREGORIAN, $month, date("Y"));
-
-echo $days;
-
-
+	if ($days < 30) {
+				print "There are $days days in the month of Febuary year $year";
+			} else if ($days > 30) {
+				print "This month must be January, March, May, July, August, October or December";
+			} else {
+				print "This month must be April, June, September or November";
+			}
 ?>	
 </body>
-</html>
+</html>	
