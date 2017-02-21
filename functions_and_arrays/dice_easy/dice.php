@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Throwing Dice</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -23,43 +24,38 @@
 for ($t = 0; $t<$throws;$t++) {
 
     $th = $t+1;
-        echo '<h2>Throw no. '.$th.'</h2>';
+        echo '
+        <div class="out">
+        <h2>Throw no. '.$th.'</h2>
+         <div class="in">
+        ';
+       
 
     for ($d=0; $d < $dice; $d++) {
 
         $outcome = rand(1,6);
 
         $di = $d + 1;
-        echo '<h5>Dice no. '.$di.' '.$outcome.'</h5>';
+
+        echo '
+        
+            <div class="img">
+                <img src="img/'.$outcome.'.png">
+            </div>
+        
+        ';
+        
     }
+    echo '
+    </div>
+    </div>
+    ';
 }
-
-
-
-
-
-// Initialize distribution
-/*for ( $i=$dice ; $i <= $dice*$throws; $i=$i+1 ) {
-    $dist[$i] = 0;
-    }
-
-for ( $t=0 ; $t < $throws; $t=$t+1 ) { // Construct distribution
-    $outcome = 0;
-    for ( $d=0 ; $d < $dice ; $d=$d+1 ) { // Throw dice
-        $outcome = $outcome + rand(1,6);
-    }
-$dist[$outcome] = $dist[$outcome]; // Increase distribution
-}
-// Output distribution
-for ( $i=$dice ; $i <= $dice*$throws ; $i=$i+1 ) {
-echo "$i : $dist[$i]<br />";
-}
-*/
-
     }
 
 
     ?>
-    
+
+<a href="dice.html">Try Again</a>    
 </body>
 </html>
