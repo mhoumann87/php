@@ -10,31 +10,32 @@
 
     <?php
 
-    if(empty($_POST['dice'] || $_POST['throws'])) {
+    if($_POST['dice'] == '' || $_POST['throws'] == '' ) {
 
         echo 'You need to enter two values';
 
     } else {
 
-
         $dice = $_POST['dice'];
         $throws = $_POST['throws']; 
 
- // Initialize distribution
-for ( $i=$dice ; $i <= 6*$dice ; $i=$i+1 ) {
+
+for ( $i=0 ; $i < $dice*$throws ; $i=$i+1 ) {
 $dist[$i] = 0;
 }
-for ( $t=0 ; $t < $throws ; $t=$t+1 ) { // Construct distribution
-$outcome = 0;
-for ( $d=0 ; $d < $dice ; $d=$d+1 ) { // Throw dice
-$outcome = $outcome + rand(1,6);
+for ( $t=0 ; $t < $throws ; $t=$t+1 ) {
+    $outcome = 0;
+
+    for ( $d=0 ; $d < $dice ; $d=$d+1 ) {
+$dist[$outcome] = rand(1,6);
 }
-$dist[$outcome] = $dist[$outcome] + 1; // Increase distribution
+$dist[$outcome] = $dist[$outcome] + 1; 
 }
-// Output distribution
-for ( $i=$dice ; $i <= 6*$dice ; $i=$i+1 ) {
-echo "$i : $dist[$i]<br />";
-}
+
+var_dump ($dist);
+//for ( $i=0; $i <= $dice*$throws ; $i=$i+1 ) {
+//echo "$i : $dist[$outcome]<br />";
+//}
     }
 
 
