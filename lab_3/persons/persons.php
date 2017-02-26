@@ -24,6 +24,11 @@
         echo '</pre><br><br>';
     }
 
+    //array_map
+    //????????
+
+
+
     asort($person);
     foreach ($person as $p) {
         echo '<pre>';
