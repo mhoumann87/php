@@ -15,21 +15,18 @@ class Account {
 
     public function withdraw($amount) {
 
-        if ($accountBalance > $amount) {
+        if ($this->accountBalance > $amount) {
 
-            $accountBalance -= $amount;
-            printBalance();
+            $this->accountBalance -= $amount;
+            return "Withdraw: $amount, new balance: $this->accountBalance";
         }
     }
 
     public function deposit($amount) {
 
-        $accountBalance += $amount;
-        printBalance();
-    }
-
-    public function printBalance() {
-
-        echo $accountNumber;
+        $this->accountBalance += $amount;
+        return "Deposit: $amount, new balance: $this->accountBalance";
+        
     }
 }
+   

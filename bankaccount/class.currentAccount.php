@@ -12,17 +12,15 @@ class CurrentAccount extends Account {
         parent::__construct($num, $name, $bal);
     }
 
-    public function withdraw($amount) {
+    public function takeout($amount) {
 
-        if (parent::$accountBalance() - $amount > $overdraftLimit) {
+        if ($this->accountBalance - $amount > $this->overdraftLimit) {
 
-            parent::accountBalance() -= $amount;
-            printBalance();
+            $this->accountBalance -= $amount;
+            return "Overdraft limit: $this->overdraftLimit, withdraw: $amount, new balance: $this->accountBalance";
+            
         }
     }
 
-    public function printBalance() {
-
-        echo parent::$accountBalance;
-    }
+   
 }
