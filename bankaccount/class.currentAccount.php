@@ -14,7 +14,7 @@ class CurrentAccount extends Account {
 
     public function takeout($amount) {
 
-        if ($this->accountBalance - $amount > $this->overdraftLimit) {
+        if ($this->accountBalance + $this->overdraftLimit > $amount ) {
 
             $this->accountBalance -= $amount;
             return "Overdraft limit: $this->overdraftLimit, withdraw: $amount, new balance: $this->accountBalance";
