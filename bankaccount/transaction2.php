@@ -1,6 +1,5 @@
 <?php 
-    include('class.Account.php');
-    
+   include('class.currentAccount.php');
 ?>
 
 <!DOCTYPE html>
@@ -12,26 +11,23 @@
     <title>Document</title>
 </head>
 <body>
+
+
+
     <h2>Bank transactions</h2>
 
-    <h3>Account</h3>
+<?php
+        echo '<h3>Current Account</h3>';
 
-    <?php
         echo '<h4>Withdraw</h4>';
-        $account1 = new Account(123, 'Ib', 1000);
-        print_r($account1);
+        $currentAccount2 = new CurrentAccount(456, 'Ole', 1000, 2500);
+        print_r($currentAccount2);
         echo '<br><br>';
-        echo $account1->withdraw(200);
+        echo $currentAccount2->takeout(1300);
         echo '<br><br>';
-        print_r($account1);
-        echo '<br><br>';
-        echo '<h4>Deposit</h4>';        
-        echo $account1->deposit(400);
-        echo '<br><br>';
-        print_r($account1);
+        print_r($currentAccount2);
         echo '<br><br>';
 
-        
 
     ?>
 </body>
